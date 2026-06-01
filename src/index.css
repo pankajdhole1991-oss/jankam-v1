@@ -1,0 +1,241 @@
+@import "tailwindcss";
+
+/* ============================================
+   JANKAM DESIGN SYSTEM — CUSTOM CSS
+   ============================================ */
+
+:root {
+  --navy: #0A1931;
+  --navy-light: #0F2347;
+  --navy-mid: #122B55;
+  --gold: #F5A623;
+  --gold-bright: #FFC107;
+  --gold-dark: #D4890A;
+  --white: #FFFFFF;
+  --off-white: #F4F6F9;
+  --text-muted: #94A3B8;
+  --border: rgba(255,255,255,0.08);
+  --glass: rgba(255,255,255,0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  background-color: var(--navy);
+  color: var(--white);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ---- Gradient Texts ---- */
+.text-gold { color: var(--gold); }
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFC107, #F5A623, #D4890A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- Glass Card ---- */
+.glass-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+}
+
+/* ---- Primary Button ---- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #F5A623, #D4890A);
+  color: #0A1931;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(245, 166, 35, 0.35);
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(245, 166, 35, 0.5);
+}
+.btn-primary:active { transform: translateY(0); }
+
+/* ---- Outline Button ---- */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 11px 28px;
+  border-radius: 10px;
+  border: 2px solid var(--gold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-family: 'Outfit', sans-serif;
+  white-space: nowrap;
+}
+.btn-outline:hover {
+  background: var(--gold);
+  color: var(--navy);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(245, 166, 35, 0.4);
+}
+.btn-outline:active { transform: translateY(0); }
+
+/* ---- Section Headings ---- */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(245, 166, 35, 0.12);
+  padding: 6px 16px;
+  border-radius: 100px;
+  border: 1px solid rgba(245, 166, 35, 0.25);
+  margin-bottom: 16px;
+}
+
+/* ---- Stat counter ---- */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.stat-animate {
+  animation: countUp 0.6s ease forwards;
+}
+
+/* ---- Nav mobile ---- */
+.nav-mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.nav-mobile-menu.open {
+  max-height: 500px;
+}
+
+/* ---- Hero overlay gradient ---- */
+.hero-overlay {
+  background: linear-gradient(
+    to right,
+    rgba(10, 25, 49, 0.95) 0%,
+    rgba(10, 25, 49, 0.75) 50%,
+    rgba(10, 25, 49, 0.3) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 25, 49, 0.5) 0%,
+      rgba(10, 25, 49, 0.92) 60%,
+      rgba(10, 25, 49, 0.98) 100%
+    );
+  }
+}
+
+/* ---- Service card hover ---- */
+.service-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(245, 166, 35, 0.2);
+  border-color: rgba(245, 166, 35, 0.4) !important;
+}
+
+/* ---- Worker desk card ---- */
+.desk-card {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.desk-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.desk-card:hover::before { transform: scaleX(1); }
+.desk-card:hover {
+  background: rgba(255,255,255,0.08) !important;
+  transform: translateY(-2px);
+}
+
+/* ---- Impact number ---- */
+.impact-number {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, #FFC107, #F5A623);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- Section padding ---- */
+.section-pad {
+  padding: 80px 20px;
+}
+@media (max-width: 640px) {
+  .section-pad { padding: 60px 16px; }
+}
+
+/* ---- Demo badge ---- */
+.demo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(245, 166, 35, 0.1);
+  border: 1px solid rgba(245, 166, 35, 0.2);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-left: 8px;
+}
