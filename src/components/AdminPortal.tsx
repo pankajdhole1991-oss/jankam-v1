@@ -389,7 +389,7 @@ export default function AdminPortal({ onClose }: AdminPortalProps) {
 
     // 2. Local development offline sandbox fallback checks
     if (!role) {
-      if (username === 'superadmin' && password === 'jankam2026') {
+      if (username === 'superadmin' && password === 'JKM@admin#2026!Secure') {
         role = 'Super Admin';
       } else if (username === 'stateadmin' && password === 'state2026') {
         role = 'State Admin';
@@ -399,7 +399,7 @@ export default function AdminPortal({ onClose }: AdminPortalProps) {
       } else if (username === 'volunmumbai' && password === 'volun2026') {
         role = 'Volunteer';
         assignedDistrict = 'Mumbai';
-      } else if (username === 'admin' && password === 'jankam2026') {
+      } else if (username === 'admin' && password === 'JKM@admin#2026!Secure') {
         role = 'Super Admin';
       }
     }
@@ -1570,9 +1570,6 @@ export default function AdminPortal({ onClose }: AdminPortalProps) {
               Authenticate & Enter
             </button>
           </form>
-          <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.3)', marginTop: '20px', fontFamily: 'Inter, sans-serif' }}>
-            Hint: Use <strong>admin</strong> and <strong>jankam2026</strong> for testing
-          </div>
         </div>
       </div>
     );
