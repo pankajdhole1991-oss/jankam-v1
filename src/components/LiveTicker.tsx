@@ -145,7 +145,7 @@ export default function LiveTicker() {
           display: 'flex',
           alignItems: 'center',
           gap: '0',
-          animation: 'tickerScroll 50s linear infinite',
+          animation: 'tickerScroll 90s linear infinite',
           whiteSpace: 'nowrap',
           paddingLeft: '110px',
           willChange: 'transform',
